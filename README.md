@@ -55,6 +55,7 @@ Pull the latest container for the latest Deemix version
 | `-e DEEMIX_SINGLE_USER=true` | OPTIONAL: Similar to the ARL functionality in previous iterations. See below for details |
 | `-p 6595:6595` | Port opened for the web interface |
 | `-e INTPORT=3333` | EXTRA OPTIONAL: This changes the internal port of deemix. DON'T CHANGE THIS IF YOU DONT KNOW WHY YOU WOULD DO IT |
+| `-e DISABLE_OWNERSHIP_CHECK=true` | EXTRA OPTIONAL: This disables the ownership check on the downloads folder. Can lead to download issues if the folder is not owned by the correct user. DON'T USE THIS IF YOU DONT KNOW WHY YOU WOULD NEED IT |
 | `registry.gitlab.com/bockiii/deemix-docker` | This container |
 
 To access the web interface, go to http://YOURSERVERIP:6595 
