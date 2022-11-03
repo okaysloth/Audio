@@ -52,6 +52,7 @@ Pull the latest container for the latest Deemix version
 | `-e PUID=1000` | OPTIONAL: User ID of the user you want the container to run as in order to fix folder permission issues |
 | `-e PGID=1000` | OPTIONAL: Group ID, see PUID |
 | `-e UMASK_SET=022` | OPTIONAL: Setting UMASK for file permissions Default is 022 |
+| `-e DEEMIX_LOCATION_BASE=/deemix/` | OPTIONAL: For subfolder reverse proxying, add the subdomain in this env variable |
 | `-e DEEMIX_SINGLE_USER=true` | OPTIONAL: Similar to the ARL functionality in previous iterations. See below for details |
 | `-p 6595:6595` | Port opened for the web interface |
 | `-e INTPORT=3333` | EXTRA OPTIONAL: This changes the internal port of deemix. DON'T CHANGE THIS IF YOU DONT KNOW WHY YOU WOULD DO IT |
