@@ -108,7 +108,7 @@ build-docker-image:
   script:
     # Download latest buildx bin from github
     - mkdir -p ~/.docker/cli-plugins/
-    - BUILDX_LATEST_BIN_URI=$(curl -s -L https://github.com/docker/buildx/releases/latest | grep 'linux-amd64' | grep 'href' | sed 's/.*href="/https:\/\/github.com/g; s/amd64".*/amd64/g')
+    - BUILDX_LATEST_BIN_URI=$(curl -s -L https://api.github.com/repos/docker/buildx/releases/latest | jq -r '.assets[].browser_download_url | select( . | contains("linux-amd64"))')
     - curl -s -L ${BUILDX_LATEST_BIN_URI} -o ~/.docker/cli-plugins/docker-buildx
     - chmod a+x ~/.docker/cli-plugins/docker-buildx
     # Get and run the latest docker/binfmt tag to use its qemu parts
